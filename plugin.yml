@@ -1,5 +1,5 @@
 name: KitPvP
-main: net.iz44kpvp.kitpvp.Main
+main: com.github.caaarlowsz.flamemc.kitpvp.Main
 author: IZ44KPvP
 description: Plugin de KitPvP
 version: 1.0

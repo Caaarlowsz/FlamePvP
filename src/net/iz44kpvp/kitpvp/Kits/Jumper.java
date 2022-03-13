@@ -14,7 +14,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -42,7 +42,7 @@ public class Jumper implements Listener {
 			p.setVelocity(vecto);
 			Jumper.naotomardano.add(p.getName());
 			Cooldown.add(p, 20);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage(API.fimcooldown);

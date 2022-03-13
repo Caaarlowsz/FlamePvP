@@ -15,7 +15,7 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffectType;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -49,41 +49,41 @@ public class Goku implements Listener {
 			p.getInventory().setLeggings(API.darArmadura(Material.LEATHER_LEGGINGS, Color.YELLOW));
 			p.getInventory().setBoots(API.darArmadura(Material.LEATHER_BOOTS, Color.YELLOW));
 			p.updateInventory();
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Poder sayajin acabando em: §b5§7s");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Poder sayajin acabando em: ï¿½b5ï¿½7s");
 				}
 			}, 0L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Poder sayajin acabando em: §b4§7s");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Poder sayajin acabando em: ï¿½b4ï¿½7s");
 				}
 			}, 20L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Poder sayajin acabando em: §b3§7s");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Poder sayajin acabando em: ï¿½b3ï¿½7s");
 				}
 			}, 40L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Poder sayajin acabando em: §b2§7s");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Poder sayajin acabando em: ï¿½b2ï¿½7s");
 				}
 			}, 60L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Poder sayajin acabando em: §b1§7s");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Poder sayajin acabando em: ï¿½b1ï¿½7s");
 				}
 			}, 80L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					API.tirarArmadura(p);
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Poder sayajin acabou");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Poder sayajin acabou");
 					Goku.emgoku.remove(p.getName());
 					p.setAllowFlight(false);
 					p.setFlying(false);
@@ -91,7 +91,7 @@ public class Goku implements Listener {
 					p.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
 				}
 			}, 100L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage(API.fimcooldown);

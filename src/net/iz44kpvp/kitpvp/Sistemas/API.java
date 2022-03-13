@@ -22,7 +22,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
 import ca.wacos.nametagedit.NametagAPI;
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import ru.tehkode.permissions.bukkit.PermissionsEx;
 
 public class API {
@@ -49,28 +49,28 @@ public class API {
 	public static String naotemtag;
 
 	static {
-		API.Motd = Main.getInstance().getConfig().getString("Motd").replace("&", "§");
-		API.StatusMotd = Main.getInstance().getConfig().getString("StatusMotd").replace("&", "§");
-		API.NomeServer = Main.getInstance().getConfig().getString("NomeServer").replace("&", "§");
-		API.AutoM1 = Main.getInstance().getConfig().getString("MensagemAutomatica1").replace("&", "§");
-		API.AutoM2 = Main.getInstance().getConfig().getString("MensagemAutomatica2").replace("&", "§");
-		API.AutoM3 = Main.getInstance().getConfig().getString("MensagemAutomatica3").replace("&", "§");
-		API.AutoM4 = Main.getInstance().getConfig().getString("MensagemAutomatica4").replace("&", "§");
-		API.AutoM5 = Main.getInstance().getConfig().getString("MensagemAutomatica5").replace("&", "§");
-		API.MSGAplicar1 = Main.getInstance().getConfig().getString("MensagemAplicar1").replace("&", "§");
-		API.MSGYoutuber1 = Main.getInstance().getConfig().getString("MensagemYoutuber1").replace("&", "§");
-		API.MSGYoutuber2 = Main.getInstance().getConfig().getString("MensagemYoutuber2").replace("&", "§");
-		API.MSGYoutuber3 = Main.getInstance().getConfig().getString("MensagemYoutuber3").replace("&", "§");
-		API.preffix = String.valueOf(String.valueOf(API.NomeServer)) + " §c\u27a1 ";
-		API.jogadoroff = String.valueOf(String.valueOf(API.preffix)) + "§cJogador offline ou inexistente";
-		API.semperm = String.valueOf(String.valueOf(API.preffix)) + "§cVoc\u00ea n\u00e3o tem permiss\u00e3o";
-		API.semconsole = String.valueOf(String.valueOf(API.preffix)) + "§cConsole n\u00e3o pode digitar esse comando";
-		API.comkit = String.valueOf(String.valueOf(API.preffix)) + "§7Voc\u00ea ja esta com kit";
-		API.semkit = String.valueOf(String.valueOf(API.preffix)) + "§cVoc\u00ea n\u00e3o possui esse kit";
+		API.Motd = FlamePvP.getInstance().getConfig().getString("Motd").replace("&", "ï¿½");
+		API.StatusMotd = FlamePvP.getInstance().getConfig().getString("StatusMotd").replace("&", "ï¿½");
+		API.NomeServer = FlamePvP.getInstance().getConfig().getString("NomeServer").replace("&", "ï¿½");
+		API.AutoM1 = FlamePvP.getInstance().getConfig().getString("MensagemAutomatica1").replace("&", "ï¿½");
+		API.AutoM2 = FlamePvP.getInstance().getConfig().getString("MensagemAutomatica2").replace("&", "ï¿½");
+		API.AutoM3 = FlamePvP.getInstance().getConfig().getString("MensagemAutomatica3").replace("&", "ï¿½");
+		API.AutoM4 = FlamePvP.getInstance().getConfig().getString("MensagemAutomatica4").replace("&", "ï¿½");
+		API.AutoM5 = FlamePvP.getInstance().getConfig().getString("MensagemAutomatica5").replace("&", "ï¿½");
+		API.MSGAplicar1 = FlamePvP.getInstance().getConfig().getString("MensagemAplicar1").replace("&", "ï¿½");
+		API.MSGYoutuber1 = FlamePvP.getInstance().getConfig().getString("MensagemYoutuber1").replace("&", "ï¿½");
+		API.MSGYoutuber2 = FlamePvP.getInstance().getConfig().getString("MensagemYoutuber2").replace("&", "ï¿½");
+		API.MSGYoutuber3 = FlamePvP.getInstance().getConfig().getString("MensagemYoutuber3").replace("&", "ï¿½");
+		API.preffix = String.valueOf(String.valueOf(API.NomeServer)) + " ï¿½c\u27a1 ";
+		API.jogadoroff = String.valueOf(String.valueOf(API.preffix)) + "ï¿½cJogador offline ou inexistente";
+		API.semperm = String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoc\u00ea n\u00e3o tem permiss\u00e3o";
+		API.semconsole = String.valueOf(String.valueOf(API.preffix)) + "ï¿½cConsole n\u00e3o pode digitar esse comando";
+		API.comkit = String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Voc\u00ea ja esta com kit";
+		API.semkit = String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoc\u00ea n\u00e3o possui esse kit";
 		API.fimcooldown = String.valueOf(String.valueOf(API.preffix))
-				+ "§aVoc\u00ea n\u00e3o est\u00e1 mais em cooldown";
-		API.bloquearpvp = String.valueOf(String.valueOf(API.preffix)) + "§aBloqueado em pvp";
-		API.naotemtag = String.valueOf(String.valueOf(API.preffix)) + "§cVoc\u00ea n\u00e3o possui essa tag";
+				+ "ï¿½aVoc\u00ea n\u00e3o est\u00e1 mais em cooldown";
+		API.bloquearpvp = String.valueOf(String.valueOf(API.preffix)) + "ï¿½aBloqueado em pvp";
+		API.naotemtag = String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoc\u00ea n\u00e3o possui essa tag";
 	}
 
 	public static ItemStack darArmadura(final Material material, final Color cor) {
@@ -82,8 +82,8 @@ public class API {
 	}
 
 	public static void MensagemCooldown(final Player p) {
-		p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§bVoc\u00ea est\u00e1 em cooldown de: §5"
-				+ Cooldown.cooldown(p) + "§bs");
+		p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½bVoc\u00ea est\u00e1 em cooldown de: ï¿½5"
+				+ Cooldown.cooldown(p) + "ï¿½bs");
 	}
 
 	public static void darItem(final Player p, final Material mat, final int quantidade, final String nome,
@@ -119,7 +119,7 @@ public class API {
 	public static void novaReceita() {
 		final ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP, 1);
 		final ItemMeta sopam = sopa.getItemMeta();
-		sopam.setDisplayName("§aSopinha");
+		sopam.setDisplayName("ï¿½aSopinha");
 		sopa.setItemMeta(sopam);
 		final ShapelessRecipe SopaNormal = new ShapelessRecipe(sopa);
 		SopaNormal.addIngredient(1, Material.BROWN_MUSHROOM);
@@ -139,7 +139,7 @@ public class API {
 				p.closeInventory();
 			} else {
 				p.sendMessage(
-						String.valueOf(String.valueOf(API.preffix)) + "§cVoc\u00ea n\u00e3o possui xp suficiente");
+						String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoc\u00ea n\u00e3o possui xp suficiente");
 			}
 		}
 	}
@@ -155,7 +155,7 @@ public class API {
 				p.closeInventory();
 			} else {
 				p.sendMessage(
-						String.valueOf(String.valueOf(API.preffix)) + "§cVoc\u00ea n\u00e3o possui xp suficiente");
+						String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoc\u00ea n\u00e3o possui xp suficiente");
 			}
 		}
 	}
@@ -197,7 +197,7 @@ public class API {
 	public static void darSopa(final Player p, final int quantas) {
 		final ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 		final ItemMeta msopa = sopa.getItemMeta();
-		msopa.setDisplayName("§aSopinha");
+		msopa.setDisplayName("ï¿½aSopinha");
 		sopa.setItemMeta(msopa);
 		for (int i = 0; i < quantas; ++i) {
 			p.getInventory().setItem(p.getInventory().firstEmpty(), new ItemStack(sopa));
@@ -217,7 +217,7 @@ public class API {
 	}
 
 	public static void CoisasNoNome(final Player p) {
-		NametagAPI.setSuffix(p.getName(), " §7(" + KillsDeathsRankXp.getRankPequeno(p) + "§7)");
+		NametagAPI.setSuffix(p.getName(), " ï¿½7(" + KillsDeathsRankXp.getRankPequeno(p) + "ï¿½7)");
 	}
 
 	public static void tirarArmadura(final Player p) {
@@ -271,10 +271,10 @@ public class API {
 	}
 
 	public static void ItemServer(final Player p) {
-		darItemBussola(p, Material.COMPASS, 1, "§e§lWARPS", 1);
-		darItem(p, Material.ENDER_CHEST, 1, "§e§lCAIXA", 3);
-		darItem(p, Material.CHEST, 1, "§e§lKITS", 4);
-		darItem(p, Material.PAPER, 1, "§e§lRANKS", 5);
-		darItemInkSack(p, Material.INK_SACK, 1, "§e§lLOJAS", 7);
+		darItemBussola(p, Material.COMPASS, 1, "ï¿½eï¿½lWARPS", 1);
+		darItem(p, Material.ENDER_CHEST, 1, "ï¿½eï¿½lCAIXA", 3);
+		darItem(p, Material.CHEST, 1, "ï¿½eï¿½lKITS", 4);
+		darItem(p, Material.PAPER, 1, "ï¿½eï¿½lRANKS", 5);
+		darItemInkSack(p, Material.INK_SACK, 1, "ï¿½eï¿½lLOJAS", 7);
 	}
 }

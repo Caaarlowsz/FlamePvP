@@ -1,5 +1,9 @@
 package net.iz44kpvp.kitpvp.Kits;
 
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
+import net.iz44kpvp.kitpvp.Sistemas.API;
+import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
+import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
@@ -12,12 +16,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import net.iz44kpvp.kitpvp.Main;
-import net.iz44kpvp.kitpvp.Sistemas.API;
-import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
-import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
-
-public class Confus\u00e3o implements Listener {
+public class Confusão implements Listener {
 	@EventHandler
 	public void onConfusao(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
@@ -37,7 +36,7 @@ public class Confus\u00e3o implements Listener {
 				((LivingEntity) pertos).addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 0));
 				((LivingEntity) pertos).addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 0));
 			}
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage(API.fimcooldown);

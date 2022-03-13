@@ -14,7 +14,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
 
@@ -49,19 +49,19 @@ public class Trader extends TraderUtil implements Listener {
 	}
 
 	public static void InvTrader(final Player p) {
-		final Inventory inv = Bukkit.createInventory((InventoryHolder) null, 9, "§aLoja§7(§eTrader§7)");
-		API.darItemInv(inv, Material.IRON_SWORD, 1, 0, "§7Pre\u00e7o: §66 Coins", 0);
-		API.darItemInv(inv, Material.LEATHER_HELMET, 1, 0, "§7Pre\u00e7o: §64 Coins", 1);
-		API.darItemInv(inv, Material.IRON_CHESTPLATE, 1, 0, "§7Pre\u00e7o: §67 Coins", 2);
-		API.darItemInv(inv, Material.LEATHER_LEGGINGS, 1, 0, "§7Pre\u00e7o: §64 Coins", 3);
-		API.darItemInv(inv, Material.IRON_BOOTS, 1, 0, "§7Pre\u00e7o: §65 Coins", 4);
-		API.darItemInv(inv, Material.POTION, 1, 16428, "§7Pre\u00e7o: §62 Coins", 5);
-		API.darItemInv(inv, Material.POTION, 1, 8265, "§7Pre\u00e7o: §63 Coins", 6);
+		final Inventory inv = Bukkit.createInventory((InventoryHolder) null, 9, "ï¿½aLojaï¿½7(ï¿½eTraderï¿½7)");
+		API.darItemInv(inv, Material.IRON_SWORD, 1, 0, "ï¿½7Pre\u00e7o: ï¿½66 Coins", 0);
+		API.darItemInv(inv, Material.LEATHER_HELMET, 1, 0, "ï¿½7Pre\u00e7o: ï¿½64 Coins", 1);
+		API.darItemInv(inv, Material.IRON_CHESTPLATE, 1, 0, "ï¿½7Pre\u00e7o: ï¿½67 Coins", 2);
+		API.darItemInv(inv, Material.LEATHER_LEGGINGS, 1, 0, "ï¿½7Pre\u00e7o: ï¿½64 Coins", 3);
+		API.darItemInv(inv, Material.IRON_BOOTS, 1, 0, "ï¿½7Pre\u00e7o: ï¿½65 Coins", 4);
+		API.darItemInv(inv, Material.POTION, 1, 16428, "ï¿½7Pre\u00e7o: ï¿½62 Coins", 5);
+		API.darItemInv(inv, Material.POTION, 1, 8265, "ï¿½7Pre\u00e7o: ï¿½63 Coins", 6);
 		API.darItemInv(inv, Material.STAINED_GLASS_PANE, 1, 5, " ", 7);
-		Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.instance, new Runnable() {
+		Bukkit.getScheduler().scheduleSyncRepeatingTask(FlamePvP.instance, new Runnable() {
 			@Override
 			public void run() {
-				API.darItemInv(inv, Material.EMERALD, 1, 0, "§7Coins: §6" + Trader.getCoinsTrader(p), 8);
+				API.darItemInv(inv, Material.EMERALD, 1, 0, "ï¿½7Coins: ï¿½6" + Trader.getCoinsTrader(p), 8);
 			}
 		}, 0L, 20L);
 		p.openInventory(inv);
@@ -80,7 +80,7 @@ public class Trader extends TraderUtil implements Listener {
 	@EventHandler
 	public void aocomprar(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getTitle().equalsIgnoreCase("§aLoja§7(§eTrader§7)") && e.getCurrentItem() != null
+		if (e.getInventory().getTitle().equalsIgnoreCase("ï¿½aLojaï¿½7(ï¿½eTraderï¿½7)") && e.getCurrentItem() != null
 				&& e.getCurrentItem().getTypeId() != 0) {
 			if (e.getCurrentItem().getType() == Material.EMERALD) {
 				e.setCancelled(true);
@@ -140,7 +140,7 @@ public class Trader extends TraderUtil implements Listener {
 				}
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§7Pre\u00e7o: §62 Coins")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½7Pre\u00e7o: ï¿½62 Coins")) {
 				e.setCancelled(true);
 				if (getTrader(p, 2)) {
 					removeCoinTrader(p, 2);
@@ -150,7 +150,7 @@ public class Trader extends TraderUtil implements Listener {
 				}
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§7Pre\u00e7o: §63 Coins")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½7Pre\u00e7o: ï¿½63 Coins")) {
 				e.setCancelled(true);
 				if (getTrader(p, 3)) {
 					removeCoinTrader(p, 3);

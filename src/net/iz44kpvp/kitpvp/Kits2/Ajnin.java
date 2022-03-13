@@ -12,7 +12,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -33,7 +33,7 @@ public class Ajnin implements Listener {
 			final Player t = (Player) e.getEntity();
 			if (Habilidade.getAbility(p).equalsIgnoreCase("Ajnin")) {
 				this.ajinhash.put(p, t);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(),
 						new Runnable() {
 							@Override
 							public void run() {
@@ -61,9 +61,9 @@ public class Ajnin implements Listener {
 				}
 				if (p.getLocation().distance(t.getLocation()) < 200.0) {
 					t.teleport(p.getLocation());
-					p.sendMessage("§aTeleportado");
+					p.sendMessage("ï¿½aTeleportado");
 					Cooldown.add(p, 3);
-					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+					Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(),
 							new Runnable() {
 								@Override
 								public void run() {
@@ -71,7 +71,7 @@ public class Ajnin implements Listener {
 								}
 							}, 60L);
 				} else {
-					p.sendMessage("§cO Ultimo jogador hitado esta muito longe!");
+					p.sendMessage("ï¿½cO Ultimo jogador hitado esta muito longe!");
 				}
 			}
 		}

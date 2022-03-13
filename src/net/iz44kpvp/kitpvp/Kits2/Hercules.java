@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -29,11 +29,11 @@ public class Hercules implements Listener {
 			}
 			for (final Entity pertos : p.getNearbyEntities(5.0, 5.0, 5.0)) {
 				pertos.setVelocity(pertos.getVelocity().setY(1));
-				((Player) pertos).sendMessage("§7Voc\u00ea foi levantado por um hercules");
+				((Player) pertos).sendMessage("ï¿½7Voc\u00ea foi levantado por um hercules");
 			}
 			p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 240, 2));
 			Cooldown.add(p, 15);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage(API.fimcooldown);

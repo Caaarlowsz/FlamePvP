@@ -17,7 +17,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import com.google.common.base.Preconditions;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.minecraft.server.v1_7_R4.EntityPlayer;
 import net.minecraft.server.v1_7_R4.PacketPlayOutNamedEntitySpawn;
@@ -42,7 +42,7 @@ public class Fake implements Listener, CommandExecutor {
 			if (cmd.getName().equalsIgnoreCase("fake")) {
 				if (p.hasPermission("kitpvp.fake")) {
 					if (args.length == 0) {
-						p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cSintaxe correta: /fake (nome)");
+						p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cSintaxe correta: /fake (nome)");
 						return false;
 					}
 					if (args.length == 1) {
@@ -52,19 +52,19 @@ public class Fake implements Listener, CommandExecutor {
 								Fake.fakes.remove(p.getName());
 								this.refreshPlayer(p);
 								p.setDisplayName(Fake.fake.get(p.getName()));
-								p.setPlayerListName("§f" + Fake.fake.get(p.getName()));
+								p.setPlayerListName("ï¿½f" + Fake.fake.get(p.getName()));
 								mudarNome(p, Fake.fake.get(p.getName()));
-								p.sendMessage("§7Voce resetou seu fake.");
+								p.sendMessage("ï¿½7Voce resetou seu fake.");
 							}
 						} else if (!Fake.fakes.contains(args[0])) {
 							if (Fake.usandoFake.contains(p)) {
 								p.sendMessage(
-										String.valueOf(String.valueOf(API.preffix)) + "§cSintaxe correta: /fake #");
+										String.valueOf(String.valueOf(API.preffix)) + "ï¿½cSintaxe correta: /fake #");
 								return true;
 							}
 							if (args[0].length() > 16) {
 								p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-										+ "§cnick grande demais escolha outro");
+										+ "ï¿½cnick grande demais escolha outro");
 								return true;
 							}
 							final String nome = p.getName();
@@ -76,7 +76,7 @@ public class Fake implements Listener, CommandExecutor {
 							Fake.fake.put(p.getName(), nome);
 							p.setDisplayName(args[0]);
 							p.setPlayerListName(args[0]);
-							p.sendMessage("§7Seu nome agora \u00e9 §a" + args[0]);
+							p.sendMessage("ï¿½7Seu nome agora \u00e9 ï¿½a" + args[0]);
 						}
 					}
 				} else {
@@ -113,7 +113,7 @@ public class Fake implements Listener, CommandExecutor {
 			name.set(gameProfile, nome);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			p.sendMessage("§cErro ao mudar");
+			p.sendMessage("ï¿½cErro ao mudar");
 		}
 		Player[] arrayOfPlayer;
 		for (int name2 = (arrayOfPlayer = Bukkit.getOnlinePlayers()).length,
@@ -139,7 +139,7 @@ public class Fake implements Listener, CommandExecutor {
 		Preconditions.checkNotNull((Object) forWhom, (Object) "forWhom");
 		if (player != forWhom && player.getWorld() == forWhom.getWorld() && forWhom.canSee(player)) {
 			forWhom.hidePlayer(player);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.instance,
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(FlamePvP.instance,
 					new Runnable() {
 						@Override
 						public void run() {

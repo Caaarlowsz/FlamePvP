@@ -4,11 +4,11 @@ import java.util.Random;
 
 import org.bukkit.Bukkit;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 
 public class AutoMensagem {
 	public static void start() {
-		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
+		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(FlamePvP.plugin, new Runnable() {
 			String[] msg = { String.valueOf(String.valueOf(API.preffix)) + API.AutoM1,
 					String.valueOf(String.valueOf(API.preffix)) + API.AutoM2,
 					String.valueOf(String.valueOf(API.preffix)) + API.AutoM3,

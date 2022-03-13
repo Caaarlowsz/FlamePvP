@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Kits.C4;
 import net.iz44kpvp.kitpvp.Kits.FlashBack;
 import net.iz44kpvp.kitpvp.Sistemas.API;
@@ -30,11 +30,11 @@ public class ResetKit implements CommandExecutor {
 			if (p.hasPermission("kitpvp.resetkit")) {
 				if (ResetKit.jaresetou.contains(p.getName())) {
 					p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-							+ "§cEspere um pouco para resetar de kit novamente");
+							+ "ï¿½cEspere um pouco para resetar de kit novamente");
 					return true;
 				}
 				ResetKit.jaresetou.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§aVoc\u00ea resetou seu kit");
+				p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½aVoc\u00ea resetou seu kit");
 				p.teleport(p.getWorld().getSpawnLocation());
 				p.getInventory().clear();
 				API.ItemServer(p);
@@ -53,12 +53,12 @@ public class ResetKit implements CommandExecutor {
 					final Item item = C4.bomba.get(p.getName());
 					item.remove();
 				}
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 					@Override
 					public void run() {
 						ResetKit.jaresetou.remove(p.getName());
 						p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-								+ "§aJ\u00e1 pode resetar seu kit novamente");
+								+ "ï¿½aJ\u00e1 pode resetar seu kit novamente");
 					}
 				}, 100L);
 				return true;

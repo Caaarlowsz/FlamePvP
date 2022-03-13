@@ -8,7 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 
 public class ClearChat implements CommandExecutor {
@@ -27,22 +27,22 @@ public class ClearChat implements CommandExecutor {
 			if (p.hasPermission("kitpvp.staff")) {
 				if (ClearChat.emcc.contains(p.getName())) {
 					p.sendMessage(
-							String.valueOf(String.valueOf(API.preffix)) + "§cEspere para limpar o chat novamente");
+							String.valueOf(String.valueOf(API.preffix)) + "ï¿½cEspere para limpar o chat novamente");
 					return true;
 				}
 				for (int i = 0; i < 100; ++i) {
 					Bukkit.broadcastMessage(" ");
 				}
-				Bukkit.broadcastMessage("§e§lO CHAT FOI LIMPO");
-				Bukkit.broadcast("§b" + p.getDisplayName() + " §7Limpou o chat", "sword.clearchat");
-				p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§aVoc\u00ea limpou o chat");
+				Bukkit.broadcastMessage("ï¿½eï¿½lO CHAT FOI LIMPO");
+				Bukkit.broadcast("ï¿½b" + p.getDisplayName() + " ï¿½7Limpou o chat", "sword.clearchat");
+				p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½aVoc\u00ea limpou o chat");
 				ClearChat.emcc.add(p.getName());
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 					@Override
 					public void run() {
 						ClearChat.emcc.remove(p.getName());
 						p.sendMessage(
-								String.valueOf(String.valueOf(API.preffix)) + "§aJ\u00e1 pode limpar o chat novamente");
+								String.valueOf(String.valueOf(API.preffix)) + "ï¿½aJ\u00e1 pode limpar o chat novamente");
 					}
 				}, 140L);
 			} else {

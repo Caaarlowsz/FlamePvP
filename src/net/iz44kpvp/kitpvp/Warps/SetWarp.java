@@ -5,7 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 
 public class SetWarp implements CommandExecutor {
@@ -13,84 +13,84 @@ public class SetWarp implements CommandExecutor {
 		final Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("warpset") && p.hasPermission("flame.warpset") && args.length == 0) {
 			p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-					+ "§cSintaxe correta: /warpset (challenge,fps,knock,main,mdr,rdm,spawn)");
+					+ "ï¿½cSintaxe correta: /warpset (challenge,fps,knock,main,mdr,rdm,spawn)");
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("challenge")) {
-			Main.getInstance().warps.set("challenge.x", p.getLocation().getX());
-			Main.getInstance().warps.set("challenge.y", p.getLocation().getY());
-			Main.getInstance().warps.set("challenge.z", p.getLocation().getZ());
-			Main.getInstance().warps.set("challenge.pitch", p.getLocation().getPitch());
-			Main.getInstance().warps.set("challenge.yaw", p.getLocation().getYaw());
-			Main.getInstance().warps.set("challenge.world", p.getLocation().getWorld().getName());
-			Main.getInstance().save();
-			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cVoce setou a warp §6Challenge");
+			FlamePvP.getInstance().warps.set("challenge.x", p.getLocation().getX());
+			FlamePvP.getInstance().warps.set("challenge.y", p.getLocation().getY());
+			FlamePvP.getInstance().warps.set("challenge.z", p.getLocation().getZ());
+			FlamePvP.getInstance().warps.set("challenge.pitch", p.getLocation().getPitch());
+			FlamePvP.getInstance().warps.set("challenge.yaw", p.getLocation().getYaw());
+			FlamePvP.getInstance().warps.set("challenge.world", p.getLocation().getWorld().getName());
+			FlamePvP.getInstance().save();
+			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoce setou a warp ï¿½6Challenge");
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("fps")) {
-			Main.getInstance().warps.set("fps.x", p.getLocation().getX());
-			Main.getInstance().warps.set("fps.y", p.getLocation().getY());
-			Main.getInstance().warps.set("fps.z", p.getLocation().getZ());
-			Main.getInstance().warps.set("fps.pitch", p.getLocation().getPitch());
-			Main.getInstance().warps.set("fps.yaw", p.getLocation().getYaw());
-			Main.getInstance().warps.set("fps.world", p.getLocation().getWorld().getName());
-			Main.getInstance().save();
-			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cVoce setou a warp §6Fps");
+			FlamePvP.getInstance().warps.set("fps.x", p.getLocation().getX());
+			FlamePvP.getInstance().warps.set("fps.y", p.getLocation().getY());
+			FlamePvP.getInstance().warps.set("fps.z", p.getLocation().getZ());
+			FlamePvP.getInstance().warps.set("fps.pitch", p.getLocation().getPitch());
+			FlamePvP.getInstance().warps.set("fps.yaw", p.getLocation().getYaw());
+			FlamePvP.getInstance().warps.set("fps.world", p.getLocation().getWorld().getName());
+			FlamePvP.getInstance().save();
+			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoce setou a warp ï¿½6Fps");
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("knock")) {
-			Main.getInstance().warps.set("knock.x", p.getLocation().getX());
-			Main.getInstance().warps.set("knock.y", p.getLocation().getY());
-			Main.getInstance().warps.set("knock.z", p.getLocation().getZ());
-			Main.getInstance().warps.set("knock.pitch", p.getLocation().getPitch());
-			Main.getInstance().warps.set("knock.yaw", p.getLocation().getYaw());
-			Main.getInstance().warps.set("knock.world", p.getLocation().getWorld().getName());
-			Main.getInstance().save();
-			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cVoce setou a warp §6Knock");
+			FlamePvP.getInstance().warps.set("knock.x", p.getLocation().getX());
+			FlamePvP.getInstance().warps.set("knock.y", p.getLocation().getY());
+			FlamePvP.getInstance().warps.set("knock.z", p.getLocation().getZ());
+			FlamePvP.getInstance().warps.set("knock.pitch", p.getLocation().getPitch());
+			FlamePvP.getInstance().warps.set("knock.yaw", p.getLocation().getYaw());
+			FlamePvP.getInstance().warps.set("knock.world", p.getLocation().getWorld().getName());
+			FlamePvP.getInstance().save();
+			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoce setou a warp ï¿½6Knock");
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("main")) {
-			Main.getInstance().warps.set("main.x", p.getLocation().getX());
-			Main.getInstance().warps.set("main.y", p.getLocation().getY());
-			Main.getInstance().warps.set("main.z", p.getLocation().getZ());
-			Main.getInstance().warps.set("main.pitch", p.getLocation().getPitch());
-			Main.getInstance().warps.set("main.yaw", p.getLocation().getYaw());
-			Main.getInstance().warps.set("main.world", p.getLocation().getWorld().getName());
-			Main.getInstance().save();
-			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cVoce setou a warp §6Main");
+			FlamePvP.getInstance().warps.set("main.x", p.getLocation().getX());
+			FlamePvP.getInstance().warps.set("main.y", p.getLocation().getY());
+			FlamePvP.getInstance().warps.set("main.z", p.getLocation().getZ());
+			FlamePvP.getInstance().warps.set("main.pitch", p.getLocation().getPitch());
+			FlamePvP.getInstance().warps.set("main.yaw", p.getLocation().getYaw());
+			FlamePvP.getInstance().warps.set("main.world", p.getLocation().getWorld().getName());
+			FlamePvP.getInstance().save();
+			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoce setou a warp ï¿½6Main");
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("mdr")) {
-			Main.getInstance().warps.set("mdr.x", p.getLocation().getX());
-			Main.getInstance().warps.set("mdr.y", p.getLocation().getY());
-			Main.getInstance().warps.set("mdr.z", p.getLocation().getZ());
-			Main.getInstance().warps.set("mdr.pitch", p.getLocation().getPitch());
-			Main.getInstance().warps.set("mdr.yaw", p.getLocation().getYaw());
-			Main.getInstance().warps.set("mdr.world", p.getLocation().getWorld().getName());
-			Main.getInstance().save();
-			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cVoce setou a warp §6Mdr");
+			FlamePvP.getInstance().warps.set("mdr.x", p.getLocation().getX());
+			FlamePvP.getInstance().warps.set("mdr.y", p.getLocation().getY());
+			FlamePvP.getInstance().warps.set("mdr.z", p.getLocation().getZ());
+			FlamePvP.getInstance().warps.set("mdr.pitch", p.getLocation().getPitch());
+			FlamePvP.getInstance().warps.set("mdr.yaw", p.getLocation().getYaw());
+			FlamePvP.getInstance().warps.set("mdr.world", p.getLocation().getWorld().getName());
+			FlamePvP.getInstance().save();
+			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoce setou a warp ï¿½6Mdr");
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("rdm")) {
-			Main.getInstance().warps.set("rdm.x", p.getLocation().getX());
-			Main.getInstance().warps.set("rdm.y", p.getLocation().getY());
-			Main.getInstance().warps.set("rdm.z", p.getLocation().getZ());
-			Main.getInstance().warps.set("rdm.pitch", p.getLocation().getPitch());
-			Main.getInstance().warps.set("rdm.yaw", p.getLocation().getYaw());
-			Main.getInstance().warps.set("rdm.world", p.getLocation().getWorld().getName());
-			Main.getInstance().save();
-			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cVoce setou a warp §6Rdm");
+			FlamePvP.getInstance().warps.set("rdm.x", p.getLocation().getX());
+			FlamePvP.getInstance().warps.set("rdm.y", p.getLocation().getY());
+			FlamePvP.getInstance().warps.set("rdm.z", p.getLocation().getZ());
+			FlamePvP.getInstance().warps.set("rdm.pitch", p.getLocation().getPitch());
+			FlamePvP.getInstance().warps.set("rdm.yaw", p.getLocation().getYaw());
+			FlamePvP.getInstance().warps.set("rdm.world", p.getLocation().getWorld().getName());
+			FlamePvP.getInstance().save();
+			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoce setou a warp ï¿½6Rdm");
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("spawn")) {
-			Main.getInstance().getConfig().set("spawn.x", p.getLocation().getX());
-			Main.getInstance().getConfig().set("spawn.y", p.getLocation().getY());
-			Main.getInstance().getConfig().set("spawn.z", p.getLocation().getZ());
-			Main.getInstance().getConfig().set("spawn.pitch", p.getLocation().getPitch());
-			Main.getInstance().getConfig().set("spawn.yaw", p.getLocation().getYaw());
-			Main.getInstance().getConfig().set("spawn.world", p.getLocation().getWorld().getName());
-			Main.getInstance().saveConfig();
-			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cVoce setou o §6Spawn");
+			FlamePvP.getInstance().getConfig().set("spawn.x", p.getLocation().getX());
+			FlamePvP.getInstance().getConfig().set("spawn.y", p.getLocation().getY());
+			FlamePvP.getInstance().getConfig().set("spawn.z", p.getLocation().getZ());
+			FlamePvP.getInstance().getConfig().set("spawn.pitch", p.getLocation().getPitch());
+			FlamePvP.getInstance().getConfig().set("spawn.yaw", p.getLocation().getYaw());
+			FlamePvP.getInstance().getConfig().set("spawn.world", p.getLocation().getWorld().getName());
+			FlamePvP.getInstance().saveConfig();
+			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoce setou o ï¿½6Spawn");
 			p.getWorld().setSpawnLocation(p.getLocation().getBlockX(), p.getLocation().getBlockY(),
 					p.getLocation().getBlockZ());
 			return true;

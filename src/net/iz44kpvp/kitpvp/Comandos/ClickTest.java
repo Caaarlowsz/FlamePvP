@@ -13,7 +13,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 
 public class ClickTest implements CommandExecutor, Listener {
@@ -33,61 +33,61 @@ public class ClickTest implements CommandExecutor, Listener {
 		}
 		if (cmd.getName().equalsIgnoreCase("clicktest")) {
 			if (ClickTest.fazendoclicktest.contains(p.getName())) {
-				p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cVoc\u00ea j\u00e1 esta em clicktest");
+				p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoc\u00ea j\u00e1 esta em clicktest");
 				return true;
 			}
 			ClickTest.fazendoclicktest.add(p.getName());
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7ClickTest iniciando em §b5§7s");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7ClickTest iniciando em ï¿½b5ï¿½7s");
 				}
 			}, 0L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7ClickTest iniciando em §b4§7s");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7ClickTest iniciando em ï¿½b4ï¿½7s");
 				}
 			}, 20L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7ClickTest iniciando em §b3§7s");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7ClickTest iniciando em ï¿½b3ï¿½7s");
 				}
 			}, 40L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7ClickTest iniciando em §b2§7s");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7ClickTest iniciando em ï¿½b2ï¿½7s");
 				}
 			}, 60L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7ClickTest iniciando em §b1§7s");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7ClickTest iniciando em ï¿½b1ï¿½7s");
 				}
 			}, 80L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7ClickTest iniciado");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7ClickTest iniciado");
 					ClickTest.emclicktest.add(p.getName());
 				}
 			}, 100L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					if (p.getLevel() >= 200) {
 						Bukkit.broadcast(
-								"§b" + p.getDisplayName()
-										+ " §7Pode estar de macro quantidade de clicks no clicktest: §b" + p.getLevel(),
+								"ï¿½b" + p.getDisplayName()
+										+ " ï¿½7Pode estar de macro quantidade de clicks no clicktest: ï¿½b" + p.getLevel(),
 								"flame.staff");
 						ClickTest.emclicktest.remove(p.getName());
 						ClickTest.fazendoclicktest.remove(p.getName());
 					}
 					p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-							+ "§7ClickTest acabado quantidade de clicks §bABAIXO");
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Quantidade de click(s) dado: §b"
+							+ "ï¿½7ClickTest acabado quantidade de clicks ï¿½bABAIXO");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Quantidade de click(s) dado: ï¿½b"
 							+ p.getLevel());
 					ClickTest.emclicktest.remove(p.getName());
 					ClickTest.fazendoclicktest.remove(p.getName());
@@ -104,7 +104,7 @@ public class ClickTest implements CommandExecutor, Listener {
 		if (ClickTest.emclicktest.contains(p.getName()) && e.getMessage().startsWith("/")) {
 			e.setCancelled(true);
 			p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-					+ "§7Voc\u00ea n\u00e3o pode digitar comandos quando estiver fazendo clicktest");
+					+ "ï¿½7Voc\u00ea n\u00e3o pode digitar comandos quando estiver fazendo clicktest");
 		}
 	}
 

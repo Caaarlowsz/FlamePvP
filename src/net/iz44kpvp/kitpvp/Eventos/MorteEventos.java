@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -26,10 +26,10 @@ public class MorteEventos implements Listener {
 			KillsDeathsRankXp.adicionarDeaths(morreu, 1);
 			matou.playSound(matou.getLocation(), Sound.ANVIL_LAND, 5.0f, 1.0f);
 			morreu.playSound(morreu.getLocation(), Sound.CREEPER_DEATH, 10.0f, 10.0f);
-			matou.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Voc\u00ea matou: §b"
-					+ morreu.getDisplayName() + " §7+5 de XP");
-			morreu.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Voc\u00ea morreu para: §b"
-					+ matou.getDisplayName() + " §7-1 de XP");
+			matou.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Voc\u00ea matou: ï¿½b"
+					+ morreu.getDisplayName() + " ï¿½7+5 de XP");
+			morreu.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Voc\u00ea morreu para: ï¿½b"
+					+ matou.getDisplayName() + " ï¿½7-1 de XP");
 			Habilidade.removeAbility(morreu);
 			Cooldown.remove(morreu);
 			morreu.teleport(matou.getWorld().getSpawnLocation());
@@ -45,7 +45,7 @@ public class MorteEventos implements Listener {
 			Warp.removeWarp(morreu);
 			morreu.teleport(morreu.getWorld().getSpawnLocation());
 			Cooldown.remove(morreu);
-			morreu.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§bVoc\u00ea se matou");
+			morreu.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½bVoc\u00ea se matou");
 			e.setDeathMessage((String) null);
 			API.tirarEfeitos(morreu);
 		}
@@ -60,6 +60,6 @@ public class MorteEventos implements Listener {
 			public void run() {
 				e.getEntity().spigot().respawn();
 			}
-		}.runTask(Main.getPlugin());
+		}.runTask(FlamePvP.getPlugin());
 	}
 }

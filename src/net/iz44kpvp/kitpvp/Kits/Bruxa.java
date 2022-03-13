@@ -14,7 +14,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -32,7 +32,7 @@ public class Bruxa implements Listener {
 			}
 			Cooldown.add(p, 60);
 			p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-					+ "§bVoc\u00ea deu alguns efeitos pros players mais proximos");
+					+ "ï¿½bVoc\u00ea deu alguns efeitos pros players mais proximos");
 			for (final Entity pertos : p.getNearbyEntities(5.0, 5.0, 5.0)) {
 				final Random efeitos = new Random();
 				final int dar = efeitos.nextInt(9);
@@ -65,13 +65,13 @@ public class Bruxa implements Listener {
 					((LivingEntity) pertos).addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 160, 0),
 							true);
 				}
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 					@Override
 					public void run() {
 						((LivingEntity) pertos).getActivePotionEffects().clear();
 					}
 				}, 100L);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 					@Override
 					public void run() {
 						p.sendMessage(API.fimcooldown);

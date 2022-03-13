@@ -14,7 +14,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -60,13 +60,13 @@ public class DeshIce_DeshFire implements Listener {
 			p.getWorld().playEffect(p.getLocation().add(-1.0, 0.0, -1.0), Effect.STEP_SOUND,
 					(Object) Material.PACKED_ICE, 15);
 			DeshIce_DeshFire.deshiceplayer.add(p);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					DeshIce_DeshFire.deshiceplayer.remove(p);
 				}
 			}, 100L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage(API.fimcooldown);
@@ -85,13 +85,13 @@ public class DeshIce_DeshFire implements Listener {
 			for (final Entity pertos : p.getNearbyEntities(5.0, 5.0, 5.0)) {
 				DeshIce_DeshFire.congelou.add((Player) pertos);
 				((Player) pertos).sendMessage(
-						String.valueOf(String.valueOf(API.preffix)) + "§7Voc\u00eas foram congelados por um §bDeshIce");
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+						String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Voc\u00eas foram congelados por um ï¿½bDeshIce");
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 					@Override
 					public void run() {
 						DeshIce_DeshFire.congelou.remove(pertos);
 						((Player) pertos).sendMessage(
-								String.valueOf(String.valueOf(API.preffix)) + "§7Voc\u00eas foram descongelados");
+								String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Voc\u00eas foram descongelados");
 					}
 				}, 100L);
 			}
@@ -119,13 +119,13 @@ public class DeshIce_DeshFire implements Listener {
 			p.getWorld().playEffect(p.getLocation().add(0.0, 0.0, -1.0), Effect.MOBSPAWNER_FLAMES, 15);
 			p.getWorld().playEffect(p.getLocation().add(-1.0, 0.0, -1.0), Effect.MOBSPAWNER_FLAMES, 15);
 			DeshIce_DeshFire.deshfireplayer.add(p);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					DeshIce_DeshFire.deshfireplayer.remove(p);
 				}
 			}, 100L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage(API.fimcooldown);
@@ -140,7 +140,7 @@ public class DeshIce_DeshFire implements Listener {
 		if (DeshIce_DeshFire.deshfireplayer.contains(p)) {
 			for (final Entity pertos : p.getNearbyEntities(5.0, 5.0, 5.0)) {
 				((Player) pertos).sendMessage(
-						String.valueOf(String.valueOf(API.preffix)) + "§7Voc\u00eas foram atingidos por um §cDeshFire");
+						String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Voc\u00eas foram atingidos por um ï¿½cDeshFire");
 				pertos.setFireTicks(100);
 			}
 		}

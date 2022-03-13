@@ -10,7 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -30,7 +30,7 @@ public class Rain implements Listener {
 			}
 			Cooldown.add(p, 25);
 			final Location loc = t.getLocation();
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.shootArrow();
@@ -39,7 +39,7 @@ public class Rain implements Listener {
 					r.setVelocity(r.getVelocity().multiply(8));
 				}
 			}, 0L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.shootArrow();
@@ -48,7 +48,7 @@ public class Rain implements Listener {
 					r.setVelocity(r.getVelocity().multiply(8));
 				}
 			}, 10L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.shootArrow();
@@ -57,7 +57,7 @@ public class Rain implements Listener {
 					r.setVelocity(r.getVelocity().multiply(8));
 				}
 			}, 15L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.shootArrow();
@@ -66,7 +66,7 @@ public class Rain implements Listener {
 					r.setVelocity(r.getVelocity().multiply(8));
 				}
 			}, 20L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.shootArrow();
@@ -75,7 +75,7 @@ public class Rain implements Listener {
 					r.setVelocity(r.getVelocity().multiply(8));
 				}
 			}, 25L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.shootArrow();
@@ -84,7 +84,7 @@ public class Rain implements Listener {
 					r.setVelocity(r.getVelocity().multiply(8));
 				}
 			}, 30L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.shootArrow();
@@ -93,7 +93,7 @@ public class Rain implements Listener {
 					r.setVelocity(r.getVelocity().multiply(8));
 				}
 			}, 35L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage(API.fimcooldown);

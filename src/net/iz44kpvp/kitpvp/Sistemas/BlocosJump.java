@@ -18,7 +18,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.util.Vector;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 
 public class BlocosJump implements Listener {
 	public static ArrayList<String> naotomardanoqueda;
@@ -37,7 +37,7 @@ public class BlocosJump implements Listener {
 			p.setVelocity(v);
 			p.playSound(loc, Sound.ENDERMAN_TELEPORT, 6.0f, 1.0f);
 			p.playEffect(loc, Effect.MOBSPAWNER_FLAMES, (Object) null);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					BlocosJump.naotomardanoqueda.remove(p.getName());

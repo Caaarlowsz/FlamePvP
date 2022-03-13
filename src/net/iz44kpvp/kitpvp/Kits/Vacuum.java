@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.Vector;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -43,9 +43,9 @@ public class Vacuum implements Listener {
 				v.setZ(v_z);
 				targetplayer.setVelocity(v);
 				p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-						+ "§aAgora voce esta puxando os players em volta de vo\u00e7e");
+						+ "ï¿½aAgora voce esta puxando os players em volta de vo\u00e7e");
 				Cooldown.add(p, 15);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 					@Override
 					public void run() {
 						p.sendMessage(API.fimcooldown);

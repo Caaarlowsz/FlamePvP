@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import ca.wacos.nametagedit.NametagAPI;
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 
 public class TagsAPI {
 	public static void setarTag(final Player p, final String tag) {
@@ -13,6 +13,6 @@ public class TagsAPI {
 				p.setDisplayName(String.valueOf(String.valueOf(tag)) + p.getName());
 				NametagAPI.setPrefix(p.getName(), tag);
 			}
-		}.runTaskAsynchronously(Main.getInstance());
+		}.runTaskAsynchronously(FlamePvP.getInstance());
 	}
 }

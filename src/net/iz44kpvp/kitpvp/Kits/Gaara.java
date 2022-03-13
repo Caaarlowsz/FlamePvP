@@ -16,7 +16,7 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -42,7 +42,7 @@ public class Gaara implements Listener {
 				&& p.getItemInHand().getType() == Material.SAND) {
 			if (Gladiator.lutando.containsKey(p.getName()) || Infernor.lutando.containsKey(p.getName())) {
 				p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-						+ "§cVoc\u00ea n\u00e3o poder usar seu kit no gladiator(infernor) ent\u00e3o vai §aganhar §eum efeito de §afor\u00e7a §ee §aspeed");
+						+ "ï¿½cVoc\u00ea n\u00e3o poder usar seu kit no gladiator(infernor) ent\u00e3o vai ï¿½aganhar ï¿½eum efeito de ï¿½afor\u00e7a ï¿½ee ï¿½aspeed");
 				API.darEfeito(p, PotionEffectType.INCREASE_DAMAGE, 10, 1);
 				API.darEfeito(p, PotionEffectType.SPEED, 10, 2);
 			} else {
@@ -152,8 +152,8 @@ public class Gaara implements Listener {
 							this.cancel();
 						}
 					}
-				}.runTaskTimer(Main.getPlugin(), 0L, 8L);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+				}.runTaskTimer(FlamePvP.getPlugin(), 0L, 8L);
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 					@Override
 					public void run() {
 						p.sendMessage(API.fimcooldown);

@@ -15,7 +15,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.Vector;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -47,7 +47,7 @@ public class Stomper implements Listener {
 				if (!Habilidade.getAbility(st).equalsIgnoreCase("AntiStomper")) {
 					st.damage(player.getFallDistance(), player);
 				} else {
-					st.sendMessage("§7Voc\u00ea foi protegido da stompada com seu kit");
+					st.sendMessage("ï¿½7Voc\u00ea foi protegido da stompada com seu kit");
 				}
 				final EntityPlayer p = ((CraftPlayer) st).getHandle();
 				if (p.getHealth() - player.getFallDistance() >= 1.0f) {
@@ -100,7 +100,7 @@ public class Stomper implements Listener {
 			final Location loc = p.getLocation();
 			p.getWorld().playSound(loc, Sound.FIREWORK_BLAST2, 2.0f, 2.0f);
 			Cooldown.add(p, 30);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage(API.fimcooldown);

@@ -23,7 +23,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
 
@@ -63,7 +63,7 @@ public class Gladiator implements Listener {
 		if (Gladiator.lutando.containsKey(p.getName()) && e.getMessage().startsWith("/")) {
 			e.setCancelled(true);
 			p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-					+ "§cVoc\u00ea n\u00e3o pode utilizar comando quanto estiver lutando");
+					+ "ï¿½cVoc\u00ea n\u00e3o pode utilizar comando quanto estiver lutando");
 		}
 	}
 
@@ -85,7 +85,7 @@ public class Gladiator implements Listener {
 				if (Infernor.lutando.containsKey(p.getName()) || Infernor.lutando.containsKey(r.getName())
 						|| Gladiator.lutando.containsKey(p.getName()) || Gladiator.lutando.containsKey(r.getName())) {
 					event.setCancelled(true);
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Voce ja esta em combate!");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Voce ja esta em combate!");
 					return;
 				}
 				final Integer currentID = this.nextID;
@@ -106,7 +106,7 @@ public class Gladiator implements Listener {
 								if (!b.isEmpty()) {
 									event.setCancelled(true);
 									p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-											+ "§cVoce nao pode criar sua arena aqui");
+											+ "ï¿½cVoce nao pode criar sua arena aqui");
 									return;
 								}
 								if (bY == 4) {
@@ -130,18 +130,18 @@ public class Gladiator implements Listener {
 					p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 110, 5));
 					r.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 110, 5));
 					p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-							+ "§7Voce desafiou um jogador! Voce tem 5 segundos de invencibilidade!");
+							+ "ï¿½7Voce desafiou um jogador! Voce tem 5 segundos de invencibilidade!");
 					p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-							+ "§7Caso nao tenha nenhum vencedor depois de 4 minutos, voce voltara ao seu local de origem!");
+							+ "ï¿½7Caso nao tenha nenhum vencedor depois de 4 minutos, voce voltara ao seu local de origem!");
 					r.sendMessage(String.valueOf(String.valueOf(API.preffix))
-							+ "§7Voce foi desafiado! Voce tem 5 segundos de invencibilidade!");
+							+ "ï¿½7Voce foi desafiado! Voce tem 5 segundos de invencibilidade!");
 					r.sendMessage(String.valueOf(String.valueOf(API.preffix))
-							+ "§7 Caso nao tenha nenhum vencedor depois de 4 minutos, voce voltara ao seu local de origem!");
+							+ "ï¿½7 Caso nao tenha nenhum vencedor depois de 4 minutos, voce voltara ao seu local de origem!");
 					Gladiator.lutando.put(p.getName(), r.getName());
 					Gladiator.lutando.put(r.getName(), p.getName());
 					Gladiator.gladgladiator.add(p.getName());
 					Gladiator.gladgladiator.add(r.getName());
-					this.id2 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+					this.id2 = Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(),
 							new Runnable() {
 								@Override
 								public void run() {
@@ -154,7 +154,7 @@ public class Gladiator implements Listener {
 									}
 								}
 							}, 2400L);
-					this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+					this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(),
 							new Runnable() {
 								@Override
 								public void run() {
@@ -171,9 +171,9 @@ public class Gladiator implements Listener {
 										Gladiator.this.oldl.remove(p.getName());
 										Gladiator.this.oldl.remove(r.getName());
 										p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-												+ "§7N\u00e3o houve nenhum vencedor, voce foi teleportado para o seu lugar de origem!");
+												+ "ï¿½7N\u00e3o houve nenhum vencedor, voce foi teleportado para o seu lugar de origem!");
 										r.sendMessage(String.valueOf(String.valueOf(API.preffix))
-												+ "§7N\u00e3o houve nenhum vencedor, voce foi teleportado para o seu lugar de origem!");
+												+ "ï¿½7N\u00e3o houve nenhum vencedor, voce foi teleportado para o seu lugar de origem!");
 										final Location loc = Gladiator.this.localizacao.get(p);
 										final List<Location> cuboid = new ArrayList<Location>();
 										for (int bX = -8; bX <= 8; ++bX) {
@@ -221,7 +221,7 @@ public class Gladiator implements Listener {
 				&& Gladiator.lutando.containsKey(e.getPlayer().getName())) {
 			e.setCancelled(true);
 			e.getClickedBlock().setType(Material.BEDROCK);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(),
 					new Runnable() {
 						@Override
 						public void run() {
@@ -239,7 +239,7 @@ public class Gladiator implements Listener {
 				&& Gladiator.lutando.containsKey(e.getPlayer().getName())) {
 			e.setCancelled(true);
 			e.getBlock().setType(Material.BEDROCK);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					if (e.getPlayer().getGameMode() != GameMode.CREATIVE
@@ -262,7 +262,7 @@ public class Gladiator implements Listener {
 			Gladiator.gladgladiator.remove(t.getName());
 			final Location old = this.oldl.get(t.getName());
 			t.teleport(old);
-			t.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cO jogador " + p.getName() + " deslogou");
+			t.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cO jogador " + p.getName() + " deslogou");
 			Bukkit.getScheduler().cancelTask(this.id1);
 			Bukkit.getScheduler().cancelTask(this.id2);
 			t.removePotionEffect(PotionEffectType.WITHER);
@@ -304,7 +304,7 @@ public class Gladiator implements Listener {
 			final Location old = this.oldl.get(p.getName());
 			k.teleport(old);
 			k.sendMessage(
-					String.valueOf(String.valueOf(API.preffix)) + "§7Voce ganhou a batalha contra " + p.getName());
+					String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Voce ganhou a batalha contra " + p.getName());
 			Bukkit.getScheduler().cancelTask(this.id1);
 			Bukkit.getScheduler().cancelTask(this.id2);
 			k.removePotionEffect(PotionEffectType.WITHER);

@@ -13,7 +13,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -34,7 +34,7 @@ public class Reverse implements Listener {
 			final Player t = (Player) e.getEntity();
 			if (Habilidade.getAbility(p).equalsIgnoreCase("Reverse")) {
 				this.ajinhash.put(p, t);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(),
 						new Runnable() {
 							@Override
 							public void run() {
@@ -65,10 +65,10 @@ public class Reverse implements Listener {
 					final Location loc2 = t.getLocation();
 					t.teleport(loc);
 					p.teleport(loc2);
-					t.sendMessage(String.valueOf(p.getName()) + " §aTrocou De Lugar Com Voc\u00ea!");
-					p.sendMessage("§aVoc\u00ea trocou de lugar com " + t.getName());
+					t.sendMessage(String.valueOf(p.getName()) + " ï¿½aTrocou De Lugar Com Voc\u00ea!");
+					p.sendMessage("ï¿½aVoc\u00ea trocou de lugar com " + t.getName());
 					Cooldown.add(p, 3);
-					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+					Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(),
 							new Runnable() {
 								@Override
 								public void run() {
@@ -76,7 +76,7 @@ public class Reverse implements Listener {
 								}
 							}, 60L);
 				} else {
-					p.sendMessage("§cO Ultimo jogador hitado esta muito longe!");
+					p.sendMessage("ï¿½cO Ultimo jogador hitado esta muito longe!");
 				}
 			}
 		}

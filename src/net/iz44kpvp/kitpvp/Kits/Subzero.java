@@ -19,7 +19,7 @@ import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.util.BlockIterator;
 import org.bukkit.util.Vector;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -44,7 +44,7 @@ public class Subzero implements Listener {
 				return;
 			}
 			Cooldown.add(p, 30);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage(API.fimcooldown);
@@ -60,7 +60,7 @@ public class Subzero implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile(Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("icew", new FixedMetadataValue(Main.getInstance(), true));
+			h.setMetadata("icew", new FixedMetadataValue(FlamePvP.getInstance(), true));
 		}
 	}
 
@@ -72,12 +72,12 @@ public class Subzero implements Listener {
 				final Player p = (Player) e.getEntity();
 				e.setDamage(e.getDamage() + 5.0);
 				Subzero.congelado.add(p.getName());
-				p.sendMessage("§7Voc\u00ea foi congelado por um Subzero");
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+				p.sendMessage("ï¿½7Voc\u00ea foi congelado por um Subzero");
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 					@Override
 					public void run() {
 						Subzero.congelado.remove(p.getName());
-						p.sendMessage("§7Voc\u00ea foi descongelado");
+						p.sendMessage("ï¿½7Voc\u00ea foi descongelado");
 					}
 				}, 140L);
 			}
@@ -89,7 +89,7 @@ public class Subzero implements Listener {
 		final Player p = e.getPlayer();
 		if (Subzero.congelado.contains(p.getName())) {
 			e.setTo(p.getLocation());
-			p.sendMessage("§7Voc\u00ea est\u00e1 congelado por um Subzero");
+			p.sendMessage("ï¿½7Voc\u00ea est\u00e1 congelado por um Subzero");
 		}
 	}
 }

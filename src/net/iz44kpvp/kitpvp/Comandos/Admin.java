@@ -23,7 +23,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.util.Vector;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.KillsDeathsRankXp;
 
@@ -56,18 +56,18 @@ public class Admin implements CommandExecutor, Listener {
 					Admin.salvarinv.put(p.getName(), p.getInventory().getContents());
 					Admin.salrvararmor.put(p.getName(), p.getInventory().getArmorContents());
 					p.getInventory().clear();
-					p.sendMessage("§aVoc\u00ea entrou no modo admin");
+					p.sendMessage("ï¿½aVoc\u00ea entrou no modo admin");
 					p.setHealth(20.0);
 					p.setFireTicks(0);
 					p.setGameMode(GameMode.CREATIVE);
-					API.darItem(p, Material.ENDER_PEARL, 1, "§bTrocaRapida", 0);
-					API.darItem(p, Material.PAPER, 1, "§bInforma\u00e7\u00f5es Do Player", 2);
-					API.darItem(p, Material.FEATHER, 1, "§bTeste Nofall", 3);
-					API.darItemEnchant(p, Material.STICK, 1, "§bTeste KnockBack", 4, Enchantment.KNOCKBACK, 10, true);
-					API.darItem(p, Material.BEDROCK, 1, "§bPrender Player", 5);
-					API.darItem(p, Material.MUSHROOM_SOUP, 1, "§bTeste Auto-Soup", 6);
-					API.darItem(p, Material.REDSTONE, 1, "§bSair Do Admin", 8);
-					Bukkit.broadcastMessage("§5[§c-§5] §b" + p.getDisplayName());
+					API.darItem(p, Material.ENDER_PEARL, 1, "ï¿½bTrocaRapida", 0);
+					API.darItem(p, Material.PAPER, 1, "ï¿½bInforma\u00e7\u00f5es Do Player", 2);
+					API.darItem(p, Material.FEATHER, 1, "ï¿½bTeste Nofall", 3);
+					API.darItemEnchant(p, Material.STICK, 1, "ï¿½bTeste KnockBack", 4, Enchantment.KNOCKBACK, 10, true);
+					API.darItem(p, Material.BEDROCK, 1, "ï¿½bPrender Player", 5);
+					API.darItem(p, Material.MUSHROOM_SOUP, 1, "ï¿½bTeste Auto-Soup", 6);
+					API.darItem(p, Material.REDSTONE, 1, "ï¿½bSair Do Admin", 8);
+					Bukkit.broadcastMessage("ï¿½5[ï¿½c-ï¿½5] ï¿½b" + p.getDisplayName());
 					p.updateInventory();
 					Player[] onlinePlayers;
 					for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, i = 0; i < length; ++i) {
@@ -83,8 +83,8 @@ public class Admin implements CommandExecutor, Listener {
 					p.setHealth(20.0);
 					p.setFireTicks(0);
 					p.setGameMode(GameMode.SURVIVAL);
-					p.sendMessage("§cVoc\u00ea saiu do modo admin");
-					Bukkit.broadcastMessage("§5[§a+§5] §b" + p.getDisplayName());
+					p.sendMessage("ï¿½cVoc\u00ea saiu do modo admin");
+					Bukkit.broadcastMessage("ï¿½5[ï¿½a+ï¿½5] ï¿½b" + p.getDisplayName());
 					Player[] onlinePlayers2;
 					for (int length2 = (onlinePlayers2 = Bukkit.getOnlinePlayers()).length, j = 0; j < length2; ++j) {
 						final Player todos = onlinePlayers2[j];
@@ -115,14 +115,14 @@ public class Admin implements CommandExecutor, Listener {
 		final Player t = (Player) e.getRightClicked();
 		if (Admin.emAdmin.contains(p) && p.getInventory().getItemInHand().getType() == Material.PAPER) {
 			final Damageable hp = t;
-			p.sendMessage("§7Informa\u00e7\u00f5es Do Player: §b" + t.getDisplayName());
-			p.sendMessage("§7Vida: §b" + (int) hp.getHealth());
-			p.sendMessage("§7Kit: §b" + API.getKit(t));
-			p.sendMessage("§7Sopas: §b" + API.getItemNoInv(t, Material.MUSHROOM_SOUP));
-			p.sendMessage("§7Matou: §b" + KillsDeathsRankXp.getKills(t));
-			p.sendMessage("§7Morreu: §b" + KillsDeathsRankXp.getDeaths(t));
-			p.sendMessage("§7XP: §b" + KillsDeathsRankXp.getXp(t));
-			p.sendMessage("§7IP: §b" + t.getAddress().getHostString());
+			p.sendMessage("ï¿½7Informa\u00e7\u00f5es Do Player: ï¿½b" + t.getDisplayName());
+			p.sendMessage("ï¿½7Vida: ï¿½b" + (int) hp.getHealth());
+			p.sendMessage("ï¿½7Kit: ï¿½b" + API.getKit(t));
+			p.sendMessage("ï¿½7Sopas: ï¿½b" + API.getItemNoInv(t, Material.MUSHROOM_SOUP));
+			p.sendMessage("ï¿½7Matou: ï¿½b" + KillsDeathsRankXp.getKills(t));
+			p.sendMessage("ï¿½7Morreu: ï¿½b" + KillsDeathsRankXp.getDeaths(t));
+			p.sendMessage("ï¿½7XP: ï¿½b" + KillsDeathsRankXp.getXp(t));
+			p.sendMessage("ï¿½7IP: ï¿½b" + t.getAddress().getHostString());
 		}
 	}
 
@@ -134,13 +134,13 @@ public class Admin implements CommandExecutor, Listener {
 				&& p.getItemInHand().getType() == Material.ENDER_PEARL) {
 			e.setCancelled(true);
 			final BukkitScheduler scheduler = Bukkit.getScheduler();
-			scheduler.scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			scheduler.scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					p.chat("/admin");
 				}
 			}, 0L);
-			scheduler.scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			scheduler.scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					p.chat("/admin");
@@ -159,7 +159,7 @@ public class Admin implements CommandExecutor, Listener {
 		if (Admin.emAdmin.contains(p) && p.getInventory().getItemInHand().getType() == Material.MUSHROOM_SOUP) {
 			if (Admin.aotestarautosoup.contains(p.getName())) {
 				p.sendMessage(
-						String.valueOf(String.valueOf(API.preffix)) + "§cVoc\u00ea j\u00e1 esta testando um player");
+						String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoc\u00ea j\u00e1 esta testando um player");
 				return;
 			}
 			Admin.salvarinventarioautosoup.put(t.getName(), t.getInventory().getContents());
@@ -167,24 +167,24 @@ public class Admin implements CommandExecutor, Listener {
 			t.setHealth(0.5);
 			p.openInventory(t.getInventory());
 			p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-					+ "§7Voc\u00ea est\u00e1 testando o auto-soup de: §b" + t.getDisplayName());
-			API.darItem(t, Material.MUSHROOM_SOUP, 1, "§cTESTE-AUTOSOUP", 14);
-			API.darItem(t, Material.MUSHROOM_SOUP, 1, "§cTESTE-AUTOSOUP", 15);
-			API.darItem(t, Material.MUSHROOM_SOUP, 1, "§cTESTE-AUTOSOUP", 16);
+					+ "ï¿½7Voc\u00ea est\u00e1 testando o auto-soup de: ï¿½b" + t.getDisplayName());
+			API.darItem(t, Material.MUSHROOM_SOUP, 1, "ï¿½cTESTE-AUTOSOUP", 14);
+			API.darItem(t, Material.MUSHROOM_SOUP, 1, "ï¿½cTESTE-AUTOSOUP", 15);
+			API.darItem(t, Material.MUSHROOM_SOUP, 1, "ï¿½cTESTE-AUTOSOUP", 16);
 			Admin.aotestarautosoup.add(p.getName());
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Teste acabado! §6e o resultado e?");
-					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§7Quantidades de sopa(s) bebida(s): §b"
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Teste acabado! ï¿½6e o resultado e?");
+					p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½7Quantidades de sopa(s) bebida(s): ï¿½b"
 							+ API.getItemNoInv(t, Material.BOWL));
 					p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-							+ "§7Quantidades de sopa(s) n\u00e3o bebida(s): §b"
+							+ "ï¿½7Quantidades de sopa(s) n\u00e3o bebida(s): ï¿½b"
 							+ API.getItemNoInv(t, Material.MUSHROOM_SOUP));
 					Admin.aotestarautosoup.remove(p.getName());
 				}
 			}, 60L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					t.getInventory().setContents(Admin.salvarinventarioautosoup.get(t.getName()));
@@ -237,11 +237,11 @@ public class Admin implements CommandExecutor, Listener {
 			t.teleport(t.getLocation().add(0.0, 11.0, -0.07));
 			p.teleport(t.getLocation().add(3.0, 0.0, 0.05));
 			Admin.hacks.add(t.getName());
-			p.sendMessage("§aVoc\u00ea prendeu o jogador: §f" + t.getName()
-					+ " §aEle N\u00e3o conseguira mais usar comandos ate voc\u00ea o liberar usando: §f/uncage "
+			p.sendMessage("ï¿½aVoc\u00ea prendeu o jogador: ï¿½f" + t.getName()
+					+ " ï¿½aEle N\u00e3o conseguira mais usar comandos ate voc\u00ea o liberar usando: ï¿½f/uncage "
 					+ t.getName());
-			t.sendMessage("§cO Staff: §f" + p.getName()
-					+ " §cLhe Prendeu Voc\u00ea n\u00e3o ira conseguir executar comandos ate que seja liberado");
+			t.sendMessage("ï¿½cO Staff: ï¿½f" + p.getName()
+					+ " ï¿½cLhe Prendeu Voc\u00ea n\u00e3o ira conseguir executar comandos ate que seja liberado");
 		}
 	}
 
@@ -250,7 +250,7 @@ public class Admin implements CommandExecutor, Listener {
 		final Player p = e.getPlayer();
 		if (Admin.hacks.contains(p.getName())) {
 			e.setCancelled(true);
-			p.sendMessage("§cVoc\u00ea esta sendo verificado n\u00e3o pode usar comandos agora.");
+			p.sendMessage("ï¿½cVoc\u00ea esta sendo verificado n\u00e3o pode usar comandos agora.");
 		}
 	}
 }

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 
 public class Cooldown {
 	public static HashMap<Player, Long> run;
@@ -18,7 +18,7 @@ public class Cooldown {
 		final long cooldownLength = System.currentTimeMillis() + seconds * 1000;
 		Cooldown.run.remove(p);
 		Cooldown.run.put(p, cooldownLength);
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 			@Override
 			public void run() {
 				Cooldown.run.remove(p);

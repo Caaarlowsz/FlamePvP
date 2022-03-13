@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -27,42 +27,42 @@ public class Pyro implements Listener {
 				return;
 			}
 			Cooldown.add(p, 21);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					final Fireball fire = (Fireball) p.getWorld().spawnEntity(p.getEyeLocation(), EntityType.FIREBALL);
 					fire.setFireTicks(30);
 				}
 			}, 0L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					final Fireball fire = (Fireball) p.getWorld().spawnEntity(p.getEyeLocation(), EntityType.FIREBALL);
 					fire.setFireTicks(30);
 				}
 			}, 15L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					final Fireball fire = (Fireball) p.getWorld().spawnEntity(p.getEyeLocation(), EntityType.FIREBALL);
 					fire.setFireTicks(30);
 				}
 			}, 20L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					final Fireball fire = (Fireball) p.getWorld().spawnEntity(p.getEyeLocation(), EntityType.FIREBALL);
 					fire.setFireTicks(30);
 				}
 			}, 25L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					final Fireball fire = (Fireball) p.getWorld().spawnEntity(p.getEyeLocation(), EntityType.FIREBALL);
 					fire.setFireTicks(30);
 				}
 			}, 30L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage(API.fimcooldown);

@@ -17,7 +17,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -37,7 +37,7 @@ public class Gun implements Listener {
 				&& p.getItemInHand().getType() == Material.WOOD_HOE) {
 			e.setCancelled(true);
 			if (Gun.guntiros.containsKey(p) && Gun.guntiros.get(p) == 2) {
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 					@Override
 					public void run() {
 						Gun.guntiros.remove(p);

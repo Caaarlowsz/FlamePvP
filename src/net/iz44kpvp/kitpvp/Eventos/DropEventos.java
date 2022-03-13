@@ -10,13 +10,13 @@ import org.bukkit.event.entity.ItemSpawnEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Comandos.Admin;
 
 public class DropEventos implements Listener {
 	@EventHandler
 	public void onItemDrop(final ItemSpawnEvent e) {
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(),
 				new Runnable() {
 					@Override
 					public void run() {

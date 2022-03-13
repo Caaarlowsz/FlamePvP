@@ -16,7 +16,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -44,23 +44,23 @@ public class ForceField implements Listener {
 			final Location loc = p.getLocation();
 			p.getWorld().playSound(loc, Sound.MAGMACUBE_WALK2, 5.0f, -5.0f);
 			Cooldown.add(p, 30);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(),
 					new Runnable() {
 						@Override
 						public void run() {
 							ForceField.forcefielddano.add(p);
 							p.sendMessage(
-									String.valueOf(String.valueOf(API.preffix)) + "§aVoce ativou o kit ForceField");
+									String.valueOf(String.valueOf(API.preffix)) + "ï¿½aVoce ativou o kit ForceField");
 						}
 					}, 0L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(),
 					new Runnable() {
 						@Override
 						public void run() {
 							ForceField.forcefielddano.remove(p);
 						}
 					}, 200L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(),
 					new Runnable() {
 						@Override
 						public void run() {

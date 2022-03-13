@@ -1,9 +1,12 @@
-package net.iz44kpvp.kitpvp;
+package com.github.caaarlowsz.flamemc.kitpvp;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.github.caaarlowsz.kitpvpapi.KitPvP;
+import com.github.caaarlowsz.kitpvpapi.KitPvPAPI;
+import net.iz44kpvp.kitpvp.SendMSG;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -64,7 +67,7 @@ import net.iz44kpvp.kitpvp.Kits.Avatar;
 import net.iz44kpvp.kitpvp.Kits.Bombeiro;
 import net.iz44kpvp.kitpvp.Kits.Bruxa;
 import net.iz44kpvp.kitpvp.Kits.C4;
-import net.iz44kpvp.kitpvp.Kits.Confus\u00e3o;
+import net.iz44kpvp.kitpvp.Kits.ConfusÃ£o;
 import net.iz44kpvp.kitpvp.Kits.Deshzin;
 import net.iz44kpvp.kitpvp.Kits.FisherMan;
 import net.iz44kpvp.kitpvp.Kits.Flash;
@@ -119,9 +122,29 @@ import net.iz44kpvp.kitpvp.Sistemas.Plugins;
 import net.iz44kpvp.kitpvp.Warps.SetWarp;
 import net.iz44kpvp.kitpvp.Warps.irWarp;
 
-public class Main extends JavaPlugin {
+public class FlamePvP extends JavaPlugin implements KitPvP {
+
+	@Override
+	public void onEnable() {
+		super.onEnable();
+		KitPvPAPI.setInstance(this);
+
+		// TODO: Remover quando melhorar a classe principal
+		this.enable();
+	}
+
+	@Override
+	public void onDisable() {
+		super.onDisable();
+
+		// TODO: Remover quando melhorar a classe principal
+		this.disable();
+	}
+
+	// TODO: Melhorar a classe principal
+
 	public static Plugin plugin;
-	public static Main instance;
+	public static FlamePvP instance;
 	public static Integer score;
 	public File statusfile;
 	public YamlConfiguration status;
@@ -131,7 +154,7 @@ public class Main extends JavaPlugin {
 	public YamlConfiguration arenas;
 
 	static {
-		Main.score = null;
+		FlamePvP.score = null;
 	}
 
 	public void onLoad() {
@@ -139,15 +162,15 @@ public class Main extends JavaPlugin {
 		for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, i = 0; i < length; ++i) {
 			final Player todos = onlinePlayers[i];
 			final ArrayList<String> msg = new ArrayList<String>();
-			msg.add(" §6KITPVP");
-			msg.add("§cServidor reiniciando...");
+			msg.add(" ï¿½6KITPVP");
+			msg.add("ï¿½cServidor reiniciando...");
 			todos.kickPlayer(String.valueOf(msg));
 		}
 	}
 
-	public void onEnable() {
-		Main.plugin = this;
-		Main.instance = this;
+	public void enable() {
+		FlamePvP.plugin = this;
+		FlamePvP.instance = this;
 		final File status = new File(this.getDataFolder(), "status.yml");
 		if (!status.exists()) {
 			this.saveResource("status.yml", false);
@@ -174,8 +197,8 @@ public class Main extends JavaPlugin {
 		this.Guis();
 		this.saveDefaultConfig();
 		API.novaReceita();
-		Bukkit.getConsoleSender().sendMessage("§aPLUGIN ATIVADO");
-		Main.score = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(getInstance(),
+		Bukkit.getConsoleSender().sendMessage("ï¿½aPLUGIN ATIVADO");
+		FlamePvP.score = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(getInstance(),
 				new Runnable() {
 					@Override
 					public void run() {
@@ -193,8 +216,8 @@ public class Main extends JavaPlugin {
 				}, 0L, 10L);
 	}
 
-	public void onDisable() {
-		Bukkit.getConsoleSender().sendMessage("§cPLUGIN DESATIVADO");
+	public void disable() {
+		Bukkit.getConsoleSender().sendMessage("ï¿½cPLUGIN DESATIVADO");
 	}
 
 	public void Eventos() {
@@ -275,7 +298,7 @@ public class Main extends JavaPlugin {
 		kits.registerEvents(new Anchor(), this);
 		kits.registerEvents(new FisherMan(), this);
 		kits.registerEvents(new Magma(), this);
-		kits.registerEvents(new Confus\u00e3o(), this);
+		kits.registerEvents(new ConfusÃ£o(), this);
 		kits.registerEvents(new Gladiator(), this);
 		kits.registerEvents(new HotPotato(), this);
 		kits.registerEvents(new ForceField(), this);
@@ -327,11 +350,11 @@ public class Main extends JavaPlugin {
 	}
 
 	public static Plugin getPlugin() {
-		return Main.plugin;
+		return FlamePvP.plugin;
 	}
 
-	public static Main getInstance() {
-		return Main.instance;
+	public static FlamePvP getInstance() {
+		return FlamePvP.instance;
 	}
 
 	public void save() {

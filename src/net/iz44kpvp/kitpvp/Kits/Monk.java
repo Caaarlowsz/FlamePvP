@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -32,11 +32,11 @@ public class Monk implements Listener {
 				final ItemStack ItemMudado = jogadorClicado.getItemInHand();
 				jogadorClicado.setItemInHand(ItemSelecionado);
 				jogadorClicado.getInventory().setItem(random, ItemMudado);
-				jogadorClicado.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cVoc\u00ea foi monkado");
-				p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§cVoc\u00ea monkou: §e"
+				jogadorClicado.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoc\u00ea foi monkado");
+				p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½cVoc\u00ea monkou: ï¿½e"
 						+ jogadorClicado.getName());
 				Cooldown.add(p, 20);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 					@Override
 					public void run() {
 						p.sendMessage(API.fimcooldown);

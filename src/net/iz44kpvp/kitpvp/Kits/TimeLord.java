@@ -14,7 +14,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -37,22 +37,22 @@ public class TimeLord implements Listener {
 				return;
 			}
 			Cooldown.add(p, 15);
-			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "§f§lVoc\u00ea congelou");
+			p.sendMessage(String.valueOf(String.valueOf(API.preffix)) + "ï¿½fï¿½lVoc\u00ea congelou");
 			for (final Entity pertos : p.getNearbyEntities(5.0, 5.0, 5.0)) {
 				TimeLord.playercongelados.add(((Player) pertos).getName());
 				((Player) pertos).sendMessage(
-						String.valueOf(String.valueOf(API.preffix)) + "§aVoc\u00ea foi congelado por um timelord");
+						String.valueOf(String.valueOf(API.preffix)) + "ï¿½aVoc\u00ea foi congelado por um timelord");
 				((Player) pertos).playSound(pertos.getLocation(), Sound.WITHER_SPAWN, 1.0f, 1.0f);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 					@Override
 					public void run() {
 						TimeLord.playercongelados.remove(((Player) pertos).getName());
 						((Player) pertos).sendMessage(String.valueOf(String.valueOf(API.preffix))
-								+ "§aVoc\u00ea n\u00e3o esta mais congelado");
+								+ "ï¿½aVoc\u00ea n\u00e3o esta mais congelado");
 					}
 				}, 160L);
 			}
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage(API.fimcooldown);

@@ -15,7 +15,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffectType;
 
-import net.iz44kpvp.kitpvp.Main;
+import com.github.caaarlowsz.flamemc.kitpvp.FlamePvP;
 import net.iz44kpvp.kitpvp.Sistemas.API;
 import net.iz44kpvp.kitpvp.Sistemas.Cooldown;
 import net.iz44kpvp.kitpvp.Sistemas.Habilidade;
@@ -30,7 +30,7 @@ public class FlashBack implements Listener {
 	}
 
 	public static void checker(final Player p) {
-		Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+		Bukkit.getScheduler().scheduleSyncRepeatingTask(FlamePvP.getInstance(), new Runnable() {
 			@Override
 			public void run() {
 				if (Habilidade.getAbility(p).equalsIgnoreCase("FlashBack")) {
@@ -50,7 +50,7 @@ public class FlashBack implements Listener {
 				&& p.getItemInHand().getType() == Material.HOPPER) {
 			if (Gladiator.lutando.containsKey(p.getName()) || Infernor.lutando.containsKey(p.getName())) {
 				p.sendMessage(String.valueOf(String.valueOf(API.preffix))
-						+ "§cVoc\u00ea n\u00e3o poder usar seu kit no gladiator(infernor) ent\u00e3o vai §aganhar §eum efeito de §afor\u00e7a §ee §aspeed");
+						+ "ï¿½cVoc\u00ea n\u00e3o poder usar seu kit no gladiator(infernor) ent\u00e3o vai ï¿½aganhar ï¿½eum efeito de ï¿½afor\u00e7a ï¿½ee ï¿½aspeed");
 				API.darEfeito(p, PotionEffectType.INCREASE_DAMAGE, 10, 1);
 				API.darEfeito(p, PotionEffectType.SPEED, 10, 2);
 			} else {
@@ -59,14 +59,14 @@ public class FlashBack implements Listener {
 					return;
 				}
 				if (!FlashBack.salvarlocal.containsKey(p.getName()) || !FlashBack.salvarinv.containsKey(p.getName())) {
-					p.sendMessage("§7O local e o inventario ainda n\u00e3o foi salvado");
+					p.sendMessage("ï¿½7O local e o inventario ainda n\u00e3o foi salvado");
 					return;
 				}
 				Cooldown.add(p, 35);
 				final Location loc = FlashBack.salvarlocal.get(p.getName());
 				p.teleport(loc);
 				p.getInventory().setContents(FlashBack.salvarinv.get(p.getName()));
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(FlamePvP.getInstance(), new Runnable() {
 					@Override
 					public void run() {
 						p.sendMessage(API.fimcooldown);
